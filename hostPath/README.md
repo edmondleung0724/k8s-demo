@@ -1,7 +1,6 @@
 # k8s-Volumes (hostPath)
 
 [root@minikube01 hostPath]# kubectl create -f hostpath-example.yaml
-
 pod/apiserver created
 
 [root@minikube01 hostPath]# kubectl get pod
