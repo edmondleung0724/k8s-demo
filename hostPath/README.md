@@ -5,6 +5,7 @@
 pod/apiserver created
 
 [root@minikube01 hostPath]# kubectl get pod
+
 NAME        READY   STATUS    RESTARTS   AGE
 apiserver   1/1     Running   0          13s
 
