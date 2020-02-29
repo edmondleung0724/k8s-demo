@@ -1,5 +1,9 @@
+Create cronjob  
+
 [root@minikube01 cronjob]# kubectl create -f my-cronjob.yaml  
 cronjob.batch/hello created  
+
+Check cronjob  
 
 [root@minikube01 cronjob]# kubectl get cronjobs  
 NAME    SCHEDULE      SUSPEND   ACTIVE   LAST SCHEDULE   AGE  
@@ -17,6 +21,8 @@ hello-1582974000-4jvqd   0/1     Completed   0          45s
 NAME                     READY   STATUS      RESTARTS   AGE    IP           NODE                   NOMINATED NODE   READINESS GATES  
 hello-1582974000-4jvqd   0/1     Completed   0          109s   172.17.0.3   minikube01.lab.local   <none>           <none>  
 hello-1582974060-f7lsj   0/1     Completed   0          49s    172.17.0.3   minikube01.lab.local   <none>           <none>  
+
+Check pod's log  
 
 [root@minikube01 cronjob]# kubectl logs hello-1582974000-4jvqd  
 Hi, current time is Sat Feb 29 11:00:17 UTC 2020  
