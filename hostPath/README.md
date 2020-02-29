@@ -3,8 +3,7 @@
 [root@minikube01 hostPath]# kubectl create -f hostpath-example.yaml  
 pod/apiserver created
 
-[root@minikube01 hostPath]# kubectl get pod
-
+[root@minikube01 hostPath]# kubectl get pod  
 NAME        READY   STATUS    RESTARTS   AGE
 apiserver   1/1     Running   0          13s
 
@@ -16,11 +15,11 @@ Hello World 123
 root@apiserver:/app# exit
 exit
 
-[root@minikube01 hostPath]# cat /tmp/test.txt
+[root@minikube01 hostPath]# cat /tmp/test.txt  
 Hello World 123
 
-[root@minikube01 hostPath]# kubectl delete pod apiserver
+[root@minikube01 hostPath]# kubectl delete pod apiserver  
 pod "apiserver" deleted
 
-[root@minikube01 hostPath]# cat /tmp/test.txt
+[root@minikube01 hostPath]# cat /tmp/test.txt  
 Hello World 123
