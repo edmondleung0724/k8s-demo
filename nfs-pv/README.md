@@ -6,7 +6,7 @@ persistentvolume/nfs-pv created
 NAME     CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE  
 nfs-pv   100Mi      RWX            Retain           Available                                   3s  
 
-Create pvc  
+**Create pvc**    
 [root@minikube01 nfs-pv]# kubectl create -f nfs-pvc.yaml  
 persistentvolumeclaim/nfs-pvc created
 
@@ -18,6 +18,7 @@ nfs-pv   100Mi      RWX            Retain           Bound    default/nfs-pvc    
 NAME      STATUS   VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   AGE  
 nfs-pvc   Bound    nfs-pv   100Mi      RWX                           12s  
 
+**Create pods**  
 [root@minikube01 nfs-pv]# kubectl create -f my-pod-1-with-pv.yaml  
 pod/my-pod-1 created
 
@@ -29,6 +30,7 @@ NAME       READY   STATUS    RESTARTS   AGE
 my-pod-1   1/1     Running   0          11s  
 my-pod-2   1/1     Running   0          4s  
 
+**Create file in pod**  
 [root@minikube01 nfs-pv]# kubectl exec -it my-pod-1 -- /bin/bash  
 root@my-pod-1:/app# ls  
 Dockerfile  index.js  node_modules  package.json  
@@ -47,9 +49,11 @@ hello world
 root@my-pod-1:/app# exit  
 exit  
 
+**Delete pod**  
 [root@minikube01 nfs-pv]# kubectl delete pod my-pod-1  
 pod "my-pod-1" deleted  
 
+**Create pod again**
 [root@minikube01 nfs-pv]# kubectl create -f my-pod-1-with-pv.yaml  
 pod/my-pod-1 created  
 
@@ -58,6 +62,7 @@ NAME       READY   STATUS    RESTARTS   AGE
 my-pod-1   1/1     Running   0          11s  
 my-pod-2   1/1     Running   0          3m18s  
 
+**File still exists in pod**  
 [root@minikube01 nfs-pv]# kubectl exec -it my-pod-1 -- /bin/bash  
 root@my-pod-1:/app# cat /demo-nfs/pv-test/my-pod-1.txt  
 hello world  
