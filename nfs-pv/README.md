@@ -1,4 +1,4 @@
-Create pv  
+**Create pv**    
 [root@minikube01 nfs-pv]# kubectl create -f nfs-pv.yaml  
 persistentvolume/nfs-pv created
 
