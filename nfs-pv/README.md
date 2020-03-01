@@ -53,7 +53,7 @@ exit
 [root@minikube01 nfs-pv]# kubectl delete pod my-pod-1  
 pod "my-pod-1" deleted  
 
-**Create pod again**
+**Create pod again**  
 [root@minikube01 nfs-pv]# kubectl create -f my-pod-1-with-pv.yaml  
 pod/my-pod-1 created  
 
