@@ -1,3 +1,4 @@
+Create pv  
 [root@minikube01 nfs-pv]# kubectl create -f nfs-pv.yaml  
 persistentvolume/nfs-pv created
 
@@ -5,6 +6,7 @@ persistentvolume/nfs-pv created
 NAME     CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE  
 nfs-pv   100Mi      RWX            Retain           Available                                   3s  
 
+Create pvc  
 [root@minikube01 nfs-pv]# kubectl create -f nfs-pvc.yaml  
 persistentvolumeclaim/nfs-pvc created
 
