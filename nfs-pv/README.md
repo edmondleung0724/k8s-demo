@@ -78,14 +78,11 @@ root@my-pod-1:/app# for i in `seq 1 1000`; do echo $i >> /demo-nfs/pv-test/a.tes
 root@my-pod-2:/app#  for i in `seq 2001 9000`; do echo $i >> /demo-nfs/pv-test/a.test; sleep 1; done
 
 **Check the file content from the nfs server**  
-[root@nfs01 data]# tail -10 a.test
-57
-2024
-58
-2025
-59
-2026
-60
-2027
-61
-62
+[root@nfs01 data]# tail -10 a.test  
+57  
+2024  
+58  
+2025  
+59  
+2026  
+60  
