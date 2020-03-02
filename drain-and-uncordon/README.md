@@ -4,6 +4,7 @@
 deployment.apps/helloworld-deployment created  
 
 **Check pod status**  
+
 [root@minikube01 drain-and-uncordon]# kubectl get pod  
 NAME                                    READY   STATUS    RESTARTS   AGE  
 helloworld-deployment-6bd884767-gtcsx   1/1     Running   0          11s  
@@ -27,6 +28,7 @@ NAME                        STATUS   ROLES    AGE     VERSION
 node/minikube01.lab.local   Ready    master   5d22h   v1.17.3    
 
 **Execute kubectl drain**  
+
 [root@minikube01 drain-and-uncordon]# kubectl drain minikube01.lab.local  
 node/minikube01.lab.local cordoned  
 evicting pod "helloworld-deployment-6bd884767-r44pp"  
@@ -42,6 +44,7 @@ pod/helloworld-deployment-6bd884767-xvrlg evicted
 node/minikube01.lab.local evicted    
 
 **Check pod status**  
+
 [root@minikube01 drain-and-uncordon]# kubectl get pod  
 NAME                                    READY   STATUS    RESTARTS   AGE  
 helloworld-deployment-6bd884767-npxzf   0/1     Pending   0          71s  
@@ -61,6 +64,7 @@ NAME                        STATUS                     ROLES    AGE     VERSION
 node/minikube01.lab.local   Ready,SchedulingDisabled   master   5d22h   v1.17.3  
 
 **Execute kubectl uncordon**  
+
 [root@minikube01 drain-and-uncordon]# kubectl uncordon minikube01.lab.local  
 node/minikube01.lab.local uncordoned  
 
