@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: helloworld-pod
+  template:
+    metadata:
+      labels:
+        app: helloworld-pod
+    spec:
+      containers:
+      - name: my-pod
+        image: edmondleung0724/edmondrepo:v1.0.0
+        ports:
+        - containerPort: 3000
