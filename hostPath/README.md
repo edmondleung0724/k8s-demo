@@ -1,6 +1,6 @@
 # k8s-Volumes (hostPath)
 
-Create pod  
+**Create pod**    
 
 [root@minikube01 hostPath]# kubectl create -f hostpath-example.yaml  
 pod/apiserver created
@@ -9,7 +9,7 @@ pod/apiserver created
 NAME        READY   STATUS    RESTARTS   AGE  
 apiserver   1/1     Running   0          13s
 
-Enter into the pod  
+**Enter into the pod**    
 
 [root@minikube01 hostPath]# kubectl exec -it apiserver -- /bin/bash
 
@@ -19,17 +19,17 @@ Hello World 123
 root@apiserver:/app# exit  
 exit
 
-Check the file in Node  
+**Check the file in Node**    
 
 [root@minikube01 hostPath]# cat /tmp/test.txt  
 Hello World 123
 
-Remove the pod  
+**Remove the pod**    
 
 [root@minikube01 hostPath]# kubectl delete pod apiserver  
 pod "apiserver" deleted
 
-File still exit  
+**File still exit**    
 
 [root@minikube01 hostPath]# cat /tmp/test.txt  
 Hello World 123
