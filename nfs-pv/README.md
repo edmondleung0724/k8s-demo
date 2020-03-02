@@ -67,3 +67,25 @@ my-pod-2   1/1     Running   0          3m18s
 root@my-pod-1:/app# cat /demo-nfs/pv-test/my-pod-1.txt  
 hello world  
 
+**Create a.test file in pod-1**  
+
+[root@minikube01 ~]# kubectl exec -it my-pod-1 -- /bin/bash
+root@my-pod-1:/app# for i in `seq 1 1000`; do echo $i >> /demo-nfs/pv-test/a.test; sleep 1; done
+
+**Edit the same file in pod02**  
+
+[root@minikube01 nfs-pv]# kubectl exec -it my-pod-2 -- /bin/bash
+root@my-pod-2:/app#  for i in `seq 2001 9000`; do echo $i >> /demo-nfs/pv-test/a.test; sleep 1; done
+
+**Check the file content from the nfs server**  
+[root@nfs01 data]# tail -10 a.test
+57
+2024
+58
+2025
+59
+2026
+60
+2027
+61
+62
