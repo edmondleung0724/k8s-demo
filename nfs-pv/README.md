@@ -72,7 +72,7 @@ hello world
 [root@minikube01 ~]# kubectl exec -it my-pod-1 -- /bin/bash
 root@my-pod-1:/app# for i in `seq 1 1000`; do echo $i >> /demo-nfs/pv-test/a.test; sleep 1; done
 
-**Edit the same file in pod02**  
+**Edit the same file in pod-2**  
 
 [root@minikube01 nfs-pv]# kubectl exec -it my-pod-2 -- /bin/bash
 root@my-pod-2:/app#  for i in `seq 2001 9000`; do echo $i >> /demo-nfs/pv-test/a.test; sleep 1; done
